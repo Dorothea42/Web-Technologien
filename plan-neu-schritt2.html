@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/jpg" href="img/icon.jpg" size="32x32">
+  <title>Study Planner - Semesterpläne</title>
+</head>
+
+<body>
+  <header>
+    <img src="img/logo.jpg" alt="Study Planner Logo" width="50px" height="50px">
+    <h1>Study Planner</h1>    
+  </header>
+
+  <nav>
+    <a href="index.html">Liste der Semesterpläne</a> |
+    <a href="plan.html">Details zum Semesterplan</a> |
+    <a href="kurs.html">Details zum Kurs</a> |
+    <a href="plan-neu-schritt1.html">Neuen Semesterplan erstellen</a>
+  </nav>
+
+  <main>
+    <h1>Meine Semesterpläne</h1>
+   <form method="post" action="https://edu.inf.fh-dortmund.de/planService/testCreatePlan.php"> 
+  <fieldset>
+    <legend>Bitte ausfüllen</legend>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required maxlength="150" pattern="[a-zA-Z0-9\-]+"><br><br>
+
+    <label>Semester:</label>
+    <input type="radio" id="winter" name="semester" value="Wintersemester" checked>
+    <label for="winter">Wintersemester</label> 
+    <input type="radio" id="sommer" name="semester" value="Sommersemester">
+    <label for="sommer">Sommersemester</label><br><br>
+
+    <label for="jahr">Jahr:</label>
+    <input type="number" id="jahr" name="jahr" min="1900" max="2099" required value="2026"><br><br>
+
+    <label for="kurse">Kurse:</label>
+    <select id="kurse" name="kurse" size="1" multiple>
+      <option value="ti">Theoretische Informatik</option>
+      <option value="web">Web-Technologien</option>
+      <option value="mci">Mensch-Computer-Interaktion</option>
+    </select> 
+  </fieldset><br>
+
+  <input type="submit" value="Absenden">
+</form>
+
+  </main>
+
+  <aside>
+    <h2>Aktuelle Meldungen</h2>
+    <ul>
+      <li>05.11.2026: Die Vorlesung zu "Web-Technologien" findet am kommenden Dienstag abweichend in der Westfalenhalle 1 statt.</li>
+      <li>19.10.2026: Die Veranstaltung "Datenbanken 1" muss in dieser Woche leider krankheitsbedingt entfallen.</li>
+    </ul>
+  </aside>
+
+  <footer>
+    <p>&copy; 2026 by WebTech Inc.</p>
+  </footer>
+</body>
+
+</html>
